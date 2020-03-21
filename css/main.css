@@ -350,33 +350,87 @@ template {
           box-sizing: border-box;
 }
 
+body {
+  color: #048ca8;
+}
+
 img {
   max-width: 100%;
   height: auto;
 }
 
 .container {
-  width: 95%;
+  width: 90%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 0.75rem;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.75px;
+  line-height: 1;
+}
+
+.text-intro {
+  font-size: 1.2rem;
+}
+
+.title-large {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.title-large span {
+  font-weight: 300;
+}
+
 .main-header {
   position: absolute;
-  top: 1rem;
+  top: 0;
   left: 0;
   right: 0;
+  padding-top: 1rem;
 }
 
 .logo {
   width: 25%;
   min-width: 10rem;
   max-width: 15rem;
-}
-
-.main-nav {
-  display: none;
-  width: 60%;
 }
 
 .hero {
@@ -396,5 +450,145 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.main-nav {
+  background: #d31869;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 100%;
+  height: 100vh;
+  font-size: 1.2rem;
+  overflow: hidden;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+}
+
+.main-nav.is-open {
+  left: 0;
+}
+
+ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  text-align: center;
+}
+
+li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  /* You don't want to have justify-content & align-items center on list item,
+  because it makes nesting <a> element only take up the size of its text and
+  it will have much smaller space to click | tab on. 
+  without jc & ai center, nesting <a> will have full height of its parent and width of its text*/
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+a:hover, a:focus {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.nav-toggle {
+  display: block;
+  padding: 1em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  display: block;
+  width: 2em;
+  height: 3px;
+  background: white;
+  -webkit-transition: all 250ms ease;
+  transition: all 250ms ease;
+}
+
+.hamburger::before {
+  -webkit-transform: translateY(-6px);
+          transform: translateY(-6px);
+}
+
+.hamburger::after {
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+}
+
+.hamburger.is-open {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.hamburger.is-open::after {
+  -webkit-transform: rotate(90deg) translateX(-1px);
+          transform: rotate(90deg) translateX(-1px);
+}
+
+.hamburger.is-open::before {
+  opacity: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75em 2.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn:not(:last-of-type) {
+  margin-bottom: 0.6em;
+}
+
+.btn--primary {
+  background: #d31869;
+  color: white;
+  border: 2px solid #d31869;
+}
+
+.btn--primary:hover, .btn--primary:focus {
+  background: #8e1047;
+}
+
+.btn--secondary {
+  border: 2px solid white;
+  color: white;
+}
+
+.btn--secondary:hover, .btn--secondary:focus {
+  background: white;
+  color: #16db93;
 }
 /*# sourceMappingURL=main.css.map */
