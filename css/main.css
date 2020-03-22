@@ -343,6 +343,7 @@ template {
   display: none;
 }
 
+/* Helper classes go here */
 *,
 *::before,
 *::after {
@@ -373,6 +374,18 @@ img {
   height: 100vh;
 }
 
+.lg-screen {
+  display: none;
+}
+
+/* moved from _home__closing-argument because it can be applied to any element */
+.bg-primary {
+  background: #048ca8;
+  color: white;
+  /*  using 'em' unit because you want the padding scale proportional to its font-size*/
+  padding: 5em 2.5em;
+}
+
 h1,
 h2,
 h3,
@@ -398,26 +411,55 @@ h1 {
   font-weight: 300;
   line-height: 1.15;
   text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 h2 {
   font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 1.75px;
+  letter-spacing: 2px;
   line-height: 1;
-}
-
-.text-intro {
-  font-size: 1.2rem;
 }
 
 .title-large {
   font-size: 3rem;
   font-weight: 900;
+  line-height: 0.9;
 }
 
 .title-large span {
   font-weight: 300;
+}
+
+.title-box {
+  background: #d31869;
+  color: white;
+  margin: 0 auto;
+  padding: 2em;
+  -webkit-transform: translateY(30%);
+          transform: translateY(30%);
+  max-width: 90%;
+}
+
+@media (min-width: 490px) {
+  .title-box {
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+}
+
+.title-box + .bg-primary {
+  padding-top: 6em;
+}
+
+@media (min-width: 490px) {
+  .title-box + .bg-primary {
+    padding-top: 8em;
+  }
+}
+
+.text-intro {
+  font-size: 1.2rem;
 }
 
 .main-header {
@@ -441,10 +483,6 @@ h2 {
   padding-top: 8rem;
   padding-bottom: 8rem;
   text-align: center;
-}
-
-.hero-img {
-  display: none;
 }
 
 /* flex-wrap: wrap on container and flex-basis:100% on nesting children effectively
@@ -583,17 +621,17 @@ a:hover, a:focus {
   opacity: 0;
 }
 
-.features {
+.benefits {
   /* we're using vh unit instead of rem | em because vh can adjust to
   the landscape mode and give narrower padding (e.g. user flips their phone)*/
-  padding: 10vh 0;
+  padding: 10vh 0 0;
 }
 
-.feature {
+.benefit {
   margin-bottom: 2.5em;
 }
 
-.feature:first-of-type {
+.benefit:first-of-type {
   /* :first-child selects no element because the first child of 
     .feature's parent(.container) is <h1> which doesn't have .feature class. 
     i.e. 
@@ -602,10 +640,12 @@ a:hover, a:focus {
   margin-top: 1.5em;
 }
 
-.feature:last-of-type {
+.benefit:last-of-type {
   margin-bottom: 0;
 }
 
+/* will take this out of closing argument section because 
+we might re-use this in other sections as the site builds up */
 .btn {
   display: inline-block;
   padding: 0.75em 2.5em;

@@ -1,10 +1,10 @@
-.features {
+.benefits {
   /* we're using vh unit instead of rem | em because vh can adjust to
   the landscape mode and give narrower padding (e.g. user flips their phone)*/
-  padding: 10vh 0;
+  padding: 10vh 0 0; // added 0 for bottom because we moved title-box down
 }
 
-.feature {
+.benefit {
   margin-bottom: 2.5em;
 
   &:first-of-type {

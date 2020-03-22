@@ -1,20 +1,21 @@
 // 1. Config files and helpers
 @import "abstracts/colors";
-@import "abstracts/type";
+@import "abstracts/font";
 
 // 2. Vendor
 @import "vendor/normalize";
 
 // 3. Base styles
 @import "base/base";
-@import "base/font";
+@import "base/typography";
 
 // 4. Layout
 @import "layout/header";
 @import "layout/hero";
 @import "layout/grid";
 @import "layout/nav";
-@import "layout/home-features";
+@import "layout/home__benefits";
+@import "layout/home__closing-argument";
 
 // 5. Components
 @import "components/buttons";
