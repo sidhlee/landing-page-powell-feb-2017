@@ -577,10 +577,9 @@ h2 {
   .hero {
     text-align: left;
     padding-bottom: 0;
-    height: 80vmin;
+    height: 850px;
+    /* 80vmin; */
     /* To prevent height of hero box become too small to contain its text when the screen height becomes too small (landscape mode?) */
-    min-height: 800px;
-    max-height: 850px;
   }
 }
 
@@ -596,11 +595,21 @@ h2 {
   top: 0;
   right: 0;
   left: 100%;
-  height: 100vh;
   font-size: 1.2rem;
   overflow: hidden;
-  -webkit-transition: all 250ms ease-in-out;
-  transition: all 250ms ease-in-out;
+}
+
+@media (min-width: 725px) {
+  .main-nav {
+    position: relative;
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+    background: none;
+    left: 0;
+    margin-top: 1em;
+    margin-left: 2em;
+  }
 }
 
 .main-nav ul {
@@ -617,6 +626,16 @@ h2 {
   height: 100vh;
 }
 
+@media (min-width: 725px) {
+  .main-nav ul {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: auto;
+  }
+}
+
 .main-nav li {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -629,6 +648,15 @@ h2 {
   because it makes nesting <a> element only take up the size of its text and
   it will have much smaller space to click | tab on. 
   without jc & ai center, nesting <a> will have full height of its parent and width of its text*/
+}
+
+@media (min-width: 725px) {
+  .main-nav li {
+    border: none;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
 }
 
 .main-nav a {
@@ -647,11 +675,34 @@ h2 {
           justify-content: center;
 }
 
+@media (min-width: 725px) {
+  .main-nav a {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+  }
+}
+
 .main-nav a:hover, .main-nav a:focus {
   background: rgba(0, 0, 0, 0.1);
 }
 
+@media (min-width: 725px) {
+  .main-nav a:hover, .main-nav a:focus {
+    background: none;
+    color: #8e1047;
+  }
+}
+
 .main-nav.is-open {
+  /* moved from .main-nav because it was triggering side-nav to slide in & out 
+       when vw was changing across break-point. This could cause some problem when
+       the user flip the phone to go to landscape mode. We're losing transition when "X"
+       button is clicked, but I think that's nicer because the user can go back to the page quickly */
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
   left: 0;
 }
 
@@ -662,6 +713,12 @@ h2 {
   right: 1em;
   top: 1em;
   cursor: pointer;
+}
+
+@media (min-width: 725px) {
+  .nav-toggle {
+    display: none;
+  }
 }
 
 .hamburger,
