@@ -4,4 +4,19 @@
   padding-top: 8rem;
   padding-bottom: 8rem;
   text-align: center;
+  @media (min-width: 725px) {
+    text-align: left;
+    padding-bottom: 0;
+    /* this can cut into the bottom of text when screen hight becomes too small (landscape mode?) */
+    // height: 80vmin;
+    min-height: 800px;
+  }
+}
+
+.hero-text {
+  @media (min-width: 725px) {
+    // hero-text will come down more on wider screen
+    // hero-text will come down even more on vertical screen if width if wider than 725px (not likely)
+    margin-top: 10vmax;
+  }
 }
