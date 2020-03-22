@@ -4,12 +4,14 @@
   padding-top: 8rem;
   padding-bottom: 8rem;
   text-align: center;
+
   @media (min-width: 725px) {
     text-align: left;
     padding-bottom: 0;
-    /* this can cut into the bottom of text when screen hight becomes too small (landscape mode?) */
-    // height: 80vmin;
+    height: 80vmin;
+    /* To prevent height of hero box become too small to contain its text when the screen height becomes too small (landscape mode?) */
     min-height: 800px;
+    max-height: 850px; // added this for super big screen
   }
 }
 
