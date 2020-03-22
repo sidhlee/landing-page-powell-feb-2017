@@ -371,7 +371,6 @@ img {
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 100vh;
 }
 
 .lg-screen {
@@ -536,6 +535,7 @@ make them a block elements with flex */
   -ms-flex-pack: distribute;
       justify-content: space-around;
   text-align: center;
+  height: 100vh;
 }
 
 .main-nav li {
