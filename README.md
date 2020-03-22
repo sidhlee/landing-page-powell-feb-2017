@@ -19,3 +19,7 @@ Code-along repo for [How to Create a Website - Complete workflow](https://youtu.
   | used when | img size becomes too big in png. quality don't matter much. slow internet speed(more time for dl) | digital art(logos, icons,..) supports transparent bg( can layer over other img) |
 
 - `background-blend-mode: multiply;` blends bg image with bg color. cool!
+- Link not clickable because ::before | ::after
+  - links inside `.nav-footer` became un-clickable being placed under ::before (img background layer).
+  - Setting `z-index` was tricky because the img background was layered on top of the parent container(footer)'s background.
+  - setting `pointer-events: none;` inside `::before` was the easiest solution.
