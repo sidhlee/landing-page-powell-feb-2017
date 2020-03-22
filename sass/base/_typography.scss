@@ -36,6 +36,8 @@ h2 {
 .title-large {
   font-size: 3rem;
   font-weight: $font-black;
+  /* All caps should have smaller line-height so that it still look good when 
+  they are wrapped into multiple rows on smaller screen  */
   line-height: 0.9;
   span {
     font-weight: $font-light;

@@ -423,6 +423,8 @@ h2 {
 .title-large {
   font-size: 3rem;
   font-weight: 900;
+  /* All caps should have smaller line-height so that it still look good when 
+  they are wrapped into multiple rows on smaller screen  */
   line-height: 0.9;
 }
 
@@ -676,5 +678,17 @@ we might re-use this in other sections as the site builds up */
 .btn--secondary:hover, .btn--secondary:focus {
   background: white;
   color: #16db93;
+}
+
+/* This file is in components folder (instead of layout) 
+   because we can use this styles in many places */
+.cta {
+  background-color: #16db93;
+  background-image: url("../../img/call-to-action-background.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 5em 0;
+  background-blend-mode: multiply;
+  color: white;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,13 @@
+/* This file is in components folder (instead of layout) 
+   because we can use this styles in many places */
+
+.cta {
+  background-color: $secondary;
+
+  background-image: url("../../img/call-to-action-background.jpg");
+  background-size: cover; // zoom out on image while it covers container.
+  background-position: center;
+  padding: 5em 0;
+  background-blend-mode: multiply; // blends background images
+  color: $text-inverse;
+}
