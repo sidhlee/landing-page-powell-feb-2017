@@ -1,0 +1,69 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0 0 0.75rem;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child,
+h5:last-child,
+h6:last-child,
+p:last-child {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: $font-light;
+  line-height: 1.15; // normalize default
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px; // smaller spacing for all-caps!
+  line-height: 1;
+}
+
+.title-large {
+  font-size: 3rem;
+  font-weight: $font-black;
+  line-height: 0.9;
+  span {
+    font-weight: $font-light;
+    // display: block; /* could've made "The next level" not to break */
+  }
+}
+
+// moved from _home__closing-argument
+.title-box {
+  background: $accent;
+  color: $text-inverse;
+  margin: 0 auto;
+  padding: 2em; // use em whenever the element has its own font size;
+  transform: translateY(30%); // move down by 30% of the box height
+  max-width: 90%;
+  @media (min-width: 490px) {
+    transform: translateY(50%);
+  }
+
+  & + .bg-primary {
+    // anytime title-box is followed by bg-primary, apply this
+    padding-top: 6em;
+    @media (min-width: 490px) {
+      padding-top: 8em;
+    }
+  }
+}
+
+.text-intro {
+  font-size: 1.2rem;
+}

@@ -1,0 +1,41 @@
+/* Helper classes go here */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  color: $main;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  height: 100vh;
+}
+
+.lg-screen {
+  display: none;
+}
+
+/* moved from _home__closing-argument because it can be applied to any element */
+.bg-primary {
+  background: $main;
+  color: $text-inverse;
+  /*  using 'em' unit because you want the padding scale proportional to its font-size*/
+  padding: 5em 2.5em; // @media has padding-top: 8em; which gets more specificity. so 5em only applies to bottom
+}

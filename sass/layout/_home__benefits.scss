@@ -1,0 +1,22 @@
+.benefits {
+  /* we're using vh unit instead of rem | em because vh can adjust to
+  the landscape mode and give narrower padding (e.g. user flips their phone)*/
+  padding: 10vh 0 0; // added 0 for bottom because we moved title-box down
+}
+
+.benefit {
+  margin-bottom: 2.5em;
+
+  &:first-of-type {
+    /* :first-child selects no element because the first child of 
+    .feature's parent(.container) is <h1> which doesn't have .feature class. 
+    i.e. 
+    There is no such element that is the first child of its parent AND
+    have a class .feature  */
+    margin-top: 1.5em;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
