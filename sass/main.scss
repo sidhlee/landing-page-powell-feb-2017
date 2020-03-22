@@ -5,6 +5,13 @@
 // 2. Vendor
 @import "vendor/normalize";
 
+/* moved from 4. Layout because we need to be able to override 
+   the rules as we work on each part of the site. 
+   NOTE: it's a good idea to import starting from more general rules 
+   to more specific ones.
+   */
+@import "layout/grid";
+
 // 3. Base styles
 @import "base/base";
 @import "base/typography";
@@ -12,7 +19,7 @@
 // 4. Layout
 @import "layout/header";
 @import "layout/hero";
-@import "layout/grid";
+
 @import "layout/nav";
 @import "layout/home__benefits";
 @import "layout/home__closing-argument";
