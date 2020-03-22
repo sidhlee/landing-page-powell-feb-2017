@@ -525,11 +525,7 @@ make them a block elements with flex */
   transition: all 250ms ease-in-out;
 }
 
-.main-nav.is-open {
-  left: 0;
-}
-
-ul {
+.main-nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -542,7 +538,7 @@ ul {
   text-align: center;
 }
 
-li {
+.main-nav li {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
@@ -556,7 +552,7 @@ li {
   without jc & ai center, nesting <a> will have full height of its parent and width of its text*/
 }
 
-a {
+.main-nav a {
   color: white;
   text-decoration: none;
   -ms-flex-preferred-size: 100%;
@@ -572,8 +568,12 @@ a {
           justify-content: center;
 }
 
-a:hover, a:focus {
+.main-nav a:hover, .main-nav a:focus {
   background: rgba(0, 0, 0, 0.1);
+}
+
+.main-nav.is-open {
+  left: 0;
 }
 
 .nav-toggle {

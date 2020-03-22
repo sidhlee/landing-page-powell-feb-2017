@@ -10,44 +10,45 @@
   overflow: hidden; // hide overflown text from <a>
 
   transition: all 250ms ease-in-out;
-  &.is-open {
-    left: 0;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
   }
-}
 
-ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  text-align: center;
-}
-
-li {
-  flex: 1 1 auto;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  display: flex;
-  /* You don't want to have justify-content & align-items center on list item,
+  li {
+    flex: 1 1 auto;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    display: flex;
+    /* You don't want to have justify-content & align-items center on list item,
   because it makes nesting <a> element only take up the size of its text and
   it will have much smaller space to click | tab on. 
   without jc & ai center, nesting <a> will have full height of its parent and width of its text*/
-}
+  }
 
-a {
-  color: $text-inverse;
-  text-decoration: none;
-  // background: lightblue; /* nice to have while debugging */
-  flex-basis: 100%; // makes its width 100% of its parent. more space for tabbing!
-  display: flex; // you can flex text content and center-align them!
-  align-items: center;
-  justify-content: center;
-  &:hover,
-  &:focus {
-    background: rgba(
-      0,
-      0,
-      0,
-      0.1
-    ); // we want to have monotone regardless of bg for .main-nav
+  a {
+    color: $text-inverse;
+    text-decoration: none;
+    // background: lightblue; /* nice to have while debugging */
+    flex-basis: 100%; // makes its width 100% of its parent. more space for tabbing!
+    display: flex; // you can flex text content and center-align them!
+    align-items: center;
+    justify-content: center;
+    &:hover,
+    &:focus {
+      background: rgba(
+        0,
+        0,
+        0,
+        0.1
+      ); // we want to have monotone regardless of bg for .main-nav
+    }
+  }
+
+  &.is-open {
+    left: 0;
   }
 }
 
