@@ -1,3 +1,21 @@
+/* flex-wrap: wrap on container and flex-basis:100% on nesting children effectively
+make them a block elements with flex */
+
 .grid {
+  /* flex will make all its nested block element(h1, div, p...) inline -> loses their width & height */
   display: flex;
+  /* default: no-wrap; without this, flex-basis will force the container's width 
+  to grow to accommodate all it's children's basis width */
+  flex-wrap: wrap;
+}
+
+.col {
+  /* don't change size and take up full width. 
+  but this will make the box width: 300% because of flex-wrap's default: nowrap */
+  flex: 0 0 100%; // will change based on @media
+}
+
+// prevent element from wrapping into different row in wider screen.
+.col--full {
+  flex: 0 0 100%; // will be the same across @media
 }

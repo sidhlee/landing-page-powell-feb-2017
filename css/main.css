@@ -352,6 +352,7 @@ template {
 
 body {
   color: #048ca8;
+  text-align: center;
 }
 
 img {
@@ -446,10 +447,31 @@ h2 {
   display: none;
 }
 
+/* flex-wrap: wrap on container and flex-basis:100% on nesting children effectively
+make them a block elements with flex */
 .grid {
+  /* flex will make all its nested block element(h1, div, p...) inline -> loses their width & height */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  /* default: no-wrap; without this, flex-basis will force the container's width 
+  to grow to accommodate all it's children's basis width */
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.col {
+  /* don't change size and take up full width. 
+  but this will make the box width: 300% because of flex-wrap's default: nowrap */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+
+.col--full {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
 }
 
 .main-nav {
@@ -559,6 +581,29 @@ a:hover, a:focus {
 
 .hamburger.is-open::before {
   opacity: 0;
+}
+
+.features {
+  /* we're using vh unit instead of rem | em because vh can adjust to
+  the landscape mode and give narrower padding (e.g. user flips their phone)*/
+  padding: 10vh 0;
+}
+
+.feature {
+  margin-bottom: 2.5em;
+}
+
+.feature:first-of-type {
+  /* :first-child selects no element because the first child of 
+    .feature's parent(.container) is <h1> which doesn't have .feature class. 
+    i.e. 
+    There is no such element that is the first child of its parent AND
+    have a class .feature  */
+  margin-top: 1.5em;
+}
+
+.feature:last-of-type {
+  margin-bottom: 0;
 }
 
 .btn {
