@@ -665,6 +665,7 @@ we might re-use this in other sections as the site builds up */
 
 .btn--primary:hover, .btn--primary:focus {
   background: #8e1047;
+  border-color: #8e1047;
 }
 
 .btn--secondary {
