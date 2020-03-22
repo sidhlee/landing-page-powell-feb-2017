@@ -36,7 +36,8 @@
 
   <section class="hero">
     <div class="container grid">
-      <div class="hero-text col">
+
+      <div class="hero-text col col--2-3">
         <h1 class="title-large"><span>Take your app to</span> the next level</h1>
         <p class="text-intro">Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, laudantium? Fuga, et.
           Labore odio amet quo quae, consequuntur assumenda illum eius sequi. Nihil dolore maxime quo ipsa ex quaerat
@@ -44,7 +45,7 @@
         <a href="" class="btn btn--secondary">Learn More</a>
         <a href="" class="btn btn--primary">Get the App</a>
       </div>
-      <div class="col">
+      <div class="col col--1-3">
         <img src="img/phone.png" alt="Phone image" class="hero-img lg-screen">
       </div>
     </div>
@@ -59,19 +60,19 @@
     <div class="container grid">
       <h1 class="col col--full">Promote your app</h1>
 
-      <div class="benefit col">
+      <div class="benefit col col--1-3">
         <img src="img/sales-responsive.png" alt="">
         <h2>Responsive Design</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum aspernatur iste obcaecati sit exercitationem
           alias consequatur quibusdam eos ullam voluptatum!</p>
       </div>
-      <div class="benefit col">
+      <div class="benefit col col--1-3">
         <img src="img/sales-hand.png" alt="">
         <h2>Easy to Set up</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet aspernatur maiores dolores, exercitationem
           nostrum voluptatum quae, adipisci animi blanditiis accusantium modi laboriosam facere necessitatibus eum!</p>
       </div>
-      <div class="benefit col">
+      <div class="benefit col col--1-3">
         <img src="img/sales-graph.png" alt="">
         <h2>Great Results</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate quidem quam quis odio tenetur, quisquam
@@ -83,13 +84,15 @@
   <!-- Closing argument section -->
 
   <section class="closing-argument">
-    <div class="grid">
-      <div class="title-box">
-        <h1>This app is amazing</h1>
-        <p>It does everything you didn't know an app needed to do.</p>
-      </div>
+    <!-- title-box was moved out of grid container 
+      because neighboring box started to fit next to it on wider screen -->
+    <div class="title-box">
+      <h1>This app is amazing</h1>
+      <p>It does everything you didn't know an app needed to do.</p>
+    </div>
 
-      <div class="col bg-primary">
+    <div class="grid">
+      <div class="col bg-primary col--1-2">
         <h1>Doing great things for you</h1>
         <h2>Lorem ipsum dolor sit amet consectetur.</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat quasi maxime, quos id temporibus in
@@ -99,8 +102,9 @@
           what your life would've been like if you hadn't got this app.</p>
         <a href="" class="btn btn--primary">Get the App</a>
       </div>
-      <div class="col img-box lg-screen">
-        <img src="img/phone-in-hand.jpg" alt="A hand holding a phone">
+      <div class="col img-box lg-screen col--1-2">
+        <!-- moved to css to fine-tune layout -->
+        <!-- <img src="img/phone-in-hand.jpg" alt="A hand holding a phone"> -->
       </div>
     </div>
   </section>
@@ -108,30 +112,33 @@
   <!-- CTA -->
 
   <section class="cta">
-    <p class="text-large">You scrolled this far and still not sold?</p>
-    <h1 class="title-large">Showcase the greatness today</h1>
-    <a href="" class="btn btn--primary">Get the app</a>
+    <!-- Added container because ::before ::after ribbons were covering up the text -->
+    <div class="container container--cta">
+      <p class="text-large">You scrolled this far and still not sold?</p>
+      <h1 class="title-large">Showcase the greatness today</h1>
+      <a href="" class="btn btn--primary">Get the app</a>
+    </div>
   </section>
 
   <!-- Footer -->
 
   <footer>
-    <div class="container">
-      <p>Take your app to the next level</p>
+    <div class="container container--footer">
+      <p class="title-footer">Take your app to the next level</p>
       <ul class="unstyled-list social-links">
         <li><a href=""><i class="fab fa-twitter-square"></i></a></li>
         <li><a href=""><i class="fab fa-instagram-square"></i></a></li>
         <li><a href=""><i class="fab fa-facebook-square"></i></a></li>
         <li><a href=""><i class="fab fa-youtube-square"></i></a></li>
       </ul>
+      <ul class="unstyled-list nav-footer">
+        <li><a href="">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Blog</a></li>
+        <li><a href="">Pricing</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
     </div>
-    <ul class="unstyled-list nav-footer">
-      <li><a href="">Home</a></li>
-      <li><a href="">About</a></li>
-      <li><a href="">Blog</a></li>
-      <li><a href="">Pricing</a></li>
-      <li><a href="">Contact</a></li>
-    </ul>
   </footer>
 
   <!-- jQuery -->

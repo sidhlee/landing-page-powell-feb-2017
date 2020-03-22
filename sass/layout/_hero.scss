@@ -4,4 +4,21 @@
   padding-top: 8rem;
   padding-bottom: 8rem;
   text-align: center;
+
+  @media (min-width: 725px) {
+    text-align: left;
+    padding-bottom: 0;
+    height: 850px; /* 80vmin; */
+    /* To prevent height of hero box become too small to contain its text when the screen height becomes too small (landscape mode?) */
+    // min-height: 850px;
+    // max-height: 850px; // added this for super big screen
+  }
+}
+
+.hero-text {
+  @media (min-width: 725px) {
+    // hero-text will come down more on wider screen
+    // hero-text will come down even more on vertical screen if width if wider than 725px (not likely)
+    margin-top: 10vmax;
+  }
 }

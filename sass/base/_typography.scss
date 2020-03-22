@@ -36,6 +36,8 @@ h2 {
 .title-large {
   font-size: 3rem;
   font-weight: $font-black;
+  /* All caps should have smaller line-height so that it still look good when 
+  they are wrapped into multiple rows on smaller screen  */
   line-height: 0.9;
   span {
     font-weight: $font-light;
@@ -61,6 +63,26 @@ h2 {
     @media (min-width: 490px) {
       padding-top: 8em;
     }
+  }
+  /* don't want title-box grow too wide on wider screen */
+  @media (min-width: 725px) {
+    max-width: 700px;
+  }
+}
+
+.title-footer {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: $text-inverse;
+    opacity: 0.25;
+    margin: 0.75em 0;
   }
 }
 

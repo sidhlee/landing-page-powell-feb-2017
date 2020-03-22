@@ -13,9 +13,37 @@ make them a block elements with flex */
   /* don't change size and take up full width. 
   but this will make the box width: 300% because of flex-wrap's default: nowrap */
   flex: 0 0 100%; // will change based on @media
+  padding: 0 0.75em;
+
+  /* WARNING! order specific spacings should only be applied to corresponding @media */
+  @media (min-width: 725px) {
+    &:first-of-type {
+      padding-left: 0;
+    }
+
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
 }
 
 // prevent element from wrapping into different row in wider screen.
 .col--full {
   flex: 0 0 100%; // will be the same across @media
+  margin-bottom: 1em;
+}
+
+// arbitrary width - site starts to look bad from this point on
+@media (min-width: 725px) {
+  .col--1-3 {
+    flex-basis: 33.3333%; // we're giving space b/w cols with padding
+  }
+
+  .col--2-3 {
+    flex-basis: 66.6666%;
+  }
+
+  .col--1-2 {
+    flex-basis: 50%;
+  }
 }

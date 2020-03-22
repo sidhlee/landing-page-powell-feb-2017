@@ -1,0 +1,53 @@
+footer {
+  background: $dark;
+  color: $text-inverse;
+  padding: 5em 0;
+  /* You can't do this because opacity for blending will be applied to the entire content  */
+  // background-image: url("../../img/logo.svg");
+
+  position: relative; // need this for pos:abs to work!
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    /* this doesn't work with absolute position because it's taken out of normal flow and has no reference to the parent element */
+    // width: 100%;
+    background-image: url("../../img/logo.svg");
+    background-repeat: no-repeat;
+    background-size: contain; // as large as possible  without clipping(cover - ...without stretching )
+    background-position: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.05; // very subtle(!)
+    pointer-events: none; // to make nav-footer clickable
+  }
+  a {
+    color: $text-inverse;
+  }
+}
+
+.social-links {
+  display: flex;
+  /* Use em for padding & margin, rem for font-size  */
+  font-size: 3rem;
+  justify-content: space-around;
+  opacity: 0.8;
+  margin: 0.7em 0; // CAUTION: 0.7em is RELATIVE to 3rem!
+}
+
+.nav-footer {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto; // top LR bottom
+
+  a {
+    text-decoration: none;
+    font-weight: $font-bold;
+  }
+}
+
+.container--footer {
+  max-width: 25em;
+}
