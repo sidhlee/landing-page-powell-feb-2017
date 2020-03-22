@@ -729,6 +729,22 @@ h2 {
 
 /* will take this out of closing argument section because 
 we might re-use this in other sections as the site builds up */
+.closing-argument .bg-primary {
+  text-align: left;
+  /* Size padding-left|right proportional to the screen width AND
+       size padding-top|bottom proportional to the font-size: font-size
+       because vertical spacing is more closely related to the text-height */
+  padding-left: 7%;
+  padding-top: 7.5em;
+  padding-bottom: 7.5em;
+}
+
+.closing-argument .img-box {
+  background-image: url("../../img/phone-in-hand.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
 footer {
   background: #444;
   color: white;
