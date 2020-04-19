@@ -1,5 +1,6 @@
 # Responsive Landing Page
 
+[github-page](https://toypiano.github.io/landing-page-powell-feb-2007/)
 Code-along repo for [How to Create a Website - Complete workflow](https://youtu.be/aEUkm1as3KE) by Kevin Powell.
 
 ## Changes
