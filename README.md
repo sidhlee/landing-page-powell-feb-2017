@@ -1,6 +1,6 @@
 # Responsive Landing Page
 
-[demo](https://tp-landing-page.netlify.app/)  
+<a href="https://tp-landing-page.netlify.app/" target="_blank">Demo</a>
 
 Code-along repo for [How to Create a Website - Complete workflow](https://youtu.be/aEUkm1as3KE) by Kevin Powell.
 
